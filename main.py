@@ -6,8 +6,7 @@ import random
 
 from dataclass_csv import DataclassWriter
 from faker import Faker
-from src.models.personnel import Personnel
-from src.models.address import Address
+from src.models import Address, Personnel
 
 if __name__ == '__main__':
     faker = Faker()
