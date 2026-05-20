@@ -73,11 +73,12 @@ class Address:
     """Class representing a address"""
 
     dod_id: int
-    street_address: str
-    city: str
-    state: str
-    state_abbr: str
-    country_code: str
+    street_address: str = None
+    city: str = None
+    state: str = None
+    state_abbr: str = None
+    country: str = None
+    country_code: str = None
 
     faker = Faker()
 
@@ -88,4 +89,5 @@ class Address:
         state_abbr, state = random.choice(list(abbreviation_to_name.items()))
         self.state = state_abbr
         self.state_abbr = state
-        self.country_code = self.faker.country_code()
+        self.country = "United States"
+        self.country_code = "US"
