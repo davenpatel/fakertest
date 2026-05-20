@@ -1,14 +1,21 @@
+"""
+Personnel Model
+"""
+
 import random
 from dataclasses import dataclass
 from faker import Faker
 
 def first_name_and_gender(fake: Faker):
+    """Generate a gender-specific first name and gender"""
     g = 'M' if random.randint(0, 1) == 0 else 'F'
     n = fake.first_name_male() if g == 'M' else fake.first_name_female()
     return {'gender': g, 'first_name': n}
 
 @dataclass
 class Personnel:
+    """Class representing a person"""
+
     dod_id: int = None
     first_name: str = None
     last_name: str = None

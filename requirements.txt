@@ -1,2 +1,3 @@
 dataclass-csv
 faker
+pylint

@@ -1,3 +1,7 @@
+"""
+Entry Class
+"""
+
 import random
 
 from dataclass_csv import DataclassWriter
@@ -21,10 +25,10 @@ if __name__ == '__main__':
         address = Address(dod_id)
         addresses.append(address)
 
-    with open("users.csv", "w") as f:
+    with open("users.csv", "w", encoding="utf-8") as f:
         w = DataclassWriter(f, personnel, Personnel)
         w.write()
 
-    with open("addresses.csv", "w") as f:
+    with open("addresses.csv", "w", encoding="utf-8") as f:
         w = DataclassWriter(f, addresses, Address)
         w.write()

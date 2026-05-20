@@ -1,3 +1,7 @@
+"""
+Address Model
+"""
+
 import random
 from dataclasses import dataclass
 from faker import Faker
@@ -66,6 +70,8 @@ abbreviation_to_name = {
 
 @dataclass
 class Address:
+    """Class representing a address"""
+
     dod_id: int
     street_address: str
     city: str
