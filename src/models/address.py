@@ -72,7 +72,7 @@ abbreviation_to_name = {
 class Address:
     """Class representing a address"""
 
-    dod_id: int
+    dod_id: int = None
     street_address: str = None
     city: str = None
     state: str = None
