@@ -23,7 +23,6 @@ def generate_dod_ids(count: int) -> list[int]:
     return list(dod_ids)
 
 def generate_personnel_records(dod_ids: list[int]) -> list[Personnel]:
-    faker = Faker()
     personnel = []
 
     for id in dod_ids:
@@ -32,7 +31,6 @@ def generate_personnel_records(dod_ids: list[int]) -> list[Personnel]:
     return personnel
 
 def generate_address_records(dod_ids: list[int]) -> list[Address]:
-    faker = Faker()
     addresses = []
 
     for id in dod_ids:

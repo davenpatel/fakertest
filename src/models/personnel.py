@@ -16,10 +16,10 @@ def first_name_and_gender(fake: Faker):
 class Personnel:
     """Class representing a person"""
 
-    dod_id: int = None
-    first_name: str = None
-    last_name: str = None
-    gender: str = None
+    dod_id: int
+    first_name: str
+    last_name: str
+    gender: str
 
     faker = Faker()
 
