@@ -71,7 +71,8 @@ abbreviation_to_name = {
 
 @dataclass
 class Address:
-    """Class representing a address"""
+    """Class representing an address."""
+    # pylint: disable=too-many-instance-attributes
 
     dod_id: int
     street_address: str
@@ -81,14 +82,13 @@ class Address:
     country: str
     country_code: str
 
-    faker = Faker()
-
     def __init__(self, dod_id: int):
+        self.faker = Faker()
         self.dod_id = dod_id
         self.street_address = self.faker.street_address()
         self.city = self.faker.city()
         state_abbr, state = random.choice(list(abbreviation_to_name.items()))
-        self.state = state_abbr
-        self.state_abbr = state
+        self.state = state
+        self.state_abbr = state_abbr
         self.country = "United States"
         self.country_code = "US"

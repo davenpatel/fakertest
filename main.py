@@ -1,4 +1,4 @@
-"""""
+"""
 Generate synthetic personnel and address CSV files.
 """
 
@@ -7,6 +7,7 @@ import random
 from dataclass_csv import DataclassWriter
 from faker import Faker
 from src.models import Address, Personnel
+
 
 def initialize_random_seed(seed: int = 0) -> None:
     """
@@ -17,6 +18,7 @@ def initialize_random_seed(seed: int = 0) -> None:
 
     Faker.seed(seed)
     random.seed(seed)
+
 
 def generate_dod_ids(count: int) -> list[int]:
     """
@@ -52,6 +54,7 @@ def generate_personnel_records(dod_ids: list[int]) -> list[Personnel]:
 
     return personnel
 
+
 def generate_address_records(dod_ids: list[int]) -> list[Address]:
     """
     Generates address records based on a list of DoD IDs. Similar to the personnel records,
@@ -68,6 +71,7 @@ def generate_address_records(dod_ids: list[int]) -> list[Address]:
 
     return addresses
 
+
 def write_csv(filename: str, records: list, record_type: type) -> None:
     """
     Writes a list of records to a CSV file using the DataclassWriter from the dataclass_csv
@@ -82,6 +86,7 @@ def write_csv(filename: str, records: list, record_type: type) -> None:
     with open(filename, "w", encoding="utf-8") as f:
         writer = DataclassWriter(f, records, record_type)
         writer.write()
+
 
 def main() -> None:
     """
@@ -101,6 +106,7 @@ def main() -> None:
 
     write_csv("users.csv", personnel, Personnel)
     write_csv("addresses.csv", addresses, Address)
+
 
 if __name__ == '__main__':
     main()
