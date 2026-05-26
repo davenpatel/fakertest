@@ -1,5 +1,5 @@
-"""
-Entry Class
+"""""
+Generate synthetic personnel and address CSV files.
 """
 
 import random
@@ -30,7 +30,7 @@ def generate_dod_ids(count: int) -> list[int]:
     dod_ids = set()
 
     while len(dod_ids) < count:
-        dod_id = faker.unique.ssn().replace('-', '')
+        dod_id = int(faker.unique.ssn().replace('-', ''))
         dod_ids.add(dod_id)
 
     return list(dod_ids)
@@ -41,7 +41,7 @@ def generate_personnel_records(dod_ids: list[int]) -> list[Personnel]:
     Generates personnel records based on a list of DoD IDs. For each DoD ID, a Personnel
     object is created and initialized with the DoD ID. The generated Personnel records are
     collected in a list and returned at the end of the function. This allows us to create
-    a structured dataset of personnelinformation that can be easily written to a CSV file
+    a structured dataset of personnel information that can be easily written to a CSV file
     or used for further processing.
     """
 
